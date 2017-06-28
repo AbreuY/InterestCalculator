@@ -10,4 +10,5 @@
     <string name="percent">%</string>
     <string name="years">年</string>
     <string name="default_interest">2.79</string>
+    <string name="result_statue">计算结果为：</string>
 </resources>
