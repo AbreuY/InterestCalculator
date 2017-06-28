@@ -1,10 +1,12 @@
 package com.shiqianguan.interestcalculator.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,8 +57,8 @@ public class CalculatorActivity extends AppCompatActivity {
                         result_text.requestFocus();
                         //计算时间很短，此次不做异步处理
                         result_text.setText("计算结果为：" + String.valueOf(Account.getTotalBalance(balance, annual_interest, years).setScale(4, BigDecimal.ROUND_HALF_EVEN)) + "元");
+                        hideSoftInput();
                         result_text.setVisibility(View.VISIBLE);
-
                     } catch (IllegalArgumentException e) {
                         years_edit.requestFocus();
                         showToast("年份输入不能为负数，请重新输入");
@@ -92,6 +94,13 @@ public class CalculatorActivity extends AppCompatActivity {
             mToast.setText(content);
         }
         mToast.show();
+    }
+
+    private void hideSoftInput() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            inputMethodManager.hideSoftInputFromInputMethod(getWindow().getDecorView().getWindowToken(), 0);
+        }
     }
 
     private class EditTextWatcher implements TextWatcher {
