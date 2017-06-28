@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Interest Calculator</string>
+    <string name="balance_statue">存入金额：</string>
+    <string name="balance_default">10000.00</string>
+    <string name="annual_interest">年利率：</string>
+    <string name="calculate_button">计算</string>
+    <string name="default_year">3</string>
+    <string name="save_years">存款年限：</string>
+    <string name="yuan">元</string>
+    <string name="percent">%</string>
+    <string name="years">年</string>
+    <string name="default_interest">2.79</string>
+</resources>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.shiqianguan.interestcalculator.view.CalculatorActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/balance_statue"
+        android:layout_marginLeft="28dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/balance"
+        android:layout_width="162dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:text="@string/balance_default"
+        android:inputType="numberDecimal"
+        app:layout_constraintLeft_toRightOf="@+id/textView"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annual_interest"
+        android:layout_marginTop="49dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/annual_interest"
+        android:layout_width="162dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:text="@string/default_interest"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/balance"
+        app:layout_constraintLeft_toLeftOf="@+id/balance"
+        android:layout_marginTop="27dp"
+        app:layout_constraintTop_toBottomOf="@+id/balance"
+        app:layout_constraintHorizontal_bias="0.347" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_years"
+        android:layout_marginTop="51dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginLeft="-20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/years"
+        android:layout_width="162dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:text="@string/default_year"
+        android:inputType="numberSigned"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/annual_interest"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/annual_interest"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/annual_interest"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/years"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.911" />
+
+    <Button
+        android:gravity="center"
+        android:id="@+id/button"
+        android:layout_width="89dp"
+        android:layout_height="50dp"
+        android:text="@string/calculate_button"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/years"
+        android:layout_marginBottom="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/result_text"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/years"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/years"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yuan"
+        app:layout_constraintLeft_toRightOf="@+id/balance"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.042" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percent"
+        android:layout_marginTop="49dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintLeft_toRightOf="@+id/annual_interest"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/years"
+        app:layout_constraintLeft_toRightOf="@+id/years"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+</android.support.constraint.ConstraintLayout>
