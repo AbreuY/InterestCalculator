@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="25dp"
         android:text="@string/result_statue"
         android:visibility="invisible"
         app:layout_constraintHorizontal_bias="0.302"

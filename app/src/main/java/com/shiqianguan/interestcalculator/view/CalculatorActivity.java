@@ -56,7 +56,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     try {
                         result_text.requestFocus();
                         //计算时间很短，此次不做异步处理
-                        result_text.setText("计算结果为：" + String.valueOf(Account.getTotalBalance(balance, annual_interest, years).setScale(4, BigDecimal.ROUND_HALF_EVEN)) + "元");
+                        result_text.setText("计算结果为：\n" + String.valueOf(Account.getTotalBalance(balance, annual_interest, years).setScale(4, BigDecimal.ROUND_HALF_EVEN)) + "元");
                         hideSoftInput();
                         result_text.setVisibility(View.VISIBLE);
                     } catch (IllegalArgumentException e) {
@@ -107,6 +107,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            //输入改变时清除上次计算的结果
             result_text.setVisibility(View.INVISIBLE);
         }
 
