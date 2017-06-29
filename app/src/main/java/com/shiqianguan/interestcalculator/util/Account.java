@@ -5,6 +5,10 @@ import java.math.BigDecimal;
 /**
  * Created by guans on 2017/6/28.
  */
+/*
+ *计算利息和本金的工具类
+ * 提供一个实例方法和静态方法
+ */
 
 public class Account {
     private String userName;
@@ -63,15 +67,18 @@ public class Account {
     }
 
     /*
+     * 结果计算的一个实例方法
      * 利息计算，使用的是复利的计算方式；
      * 由于题意要求是整年存取，故只考虑存取年限为整年的判断，不再对没存够整年的情况进行分析（否则的话要对年份和利息规则进行计算）
      * 考虑到精度使用BigDecimal进行计算;
      */
-    public BigDecimal getTotalBalance(int years) {
+    public BigDecimal getTotalBalanceByInstance(double inputBalance, double inputAnnualInterest, int years) {
         //首先进行输入年限的非负判断
         if (years < 0)
             throw new IllegalArgumentException("Years cannot be negative");
         BigDecimal growthRate = annualInterest.add(new BigDecimal(1));
+        setAnnualInterest(inputAnnualInterest);
+        setBalance(inputBalance);
         for (int i = 0; i <= years - 1; i++) {
             balance = balance.multiply(growthRate);
         }
